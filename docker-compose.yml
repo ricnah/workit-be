@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # traefik:
+  #   image: traefik:v2.5
+  #   command:
+  #     - "--api.insecure=true"
+  #     - "--providers.docker=true"
+  #     - "--entrypoints.web.address=:80"
+  #     - "--entrypoints.websecure.address=:443"
+  #     - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+  #     - "--certificatesresolvers.myresolver.acme.email=denieskresna@gmail.com"
+  #     - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+  #     - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+  #     - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+  #     - "--entrypoints.web.http.redirections.entryPoint.permanent=true"
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  #     - "./letsencrypt:/letsencrypt"
+  #   labels:
+  #     - "traefik.enable=true"
+
+  backend:
+    container_name: denieskresna_app
+    build: ./
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.backend.rule=Host(`denieskresna.top`)"
+    #   - "traefik.http.routers.backend.entrypoints=websecure"
+    #   - "traefik.http.routers.backend.tls.certresolver=myresolver"
+    #   - "traefik.http.services.backend.loadbalancer.server.port=8080"  # Ensure this matches the internal port
+    env_file:
+      - ./backend.env
+    volumes:
+      - ./config:/app/config
+    depends_on:
+      # - traefik
+      - database
+
+  database:
+    platform: linux/x86_64
+    image: mysql:8.0.28
+    container_name: app_mysql
+    ports:
+      - 3334:3306
+    environment:
+      - MYSQL_ROOT_HOST=localhost
+      - MYSQL_USER=doadmin
+      - MYSQL_PASSWORD=ReArKUDiECGqYLDe
+      - MYSQL_DATABASE=sined
+      - MYSQL_ROOT_PASSWORD=ReArKUDiECGqYLDe
+    volumes:
+      - database_mysql:/var/lib/mysql
+
+volumes:
+  database_mysql:
