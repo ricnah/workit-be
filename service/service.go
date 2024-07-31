@@ -1,12 +1,12 @@
 package service
 
 import (
-	"github.com/DeniesKresna/sined/config"
-	"github.com/DeniesKresna/sined/service/middlewares"
+	"github.com/ricnah/workit-be/config"
+	"github.com/ricnah/workit-be/service/middlewares"
 
-	userModule "github.com/DeniesKresna/sined/service/modules/user"
-	userrepo "github.com/DeniesKresna/sined/service/modules/user/repository"
-	usercase "github.com/DeniesKresna/sined/service/modules/user/usecase"
+	userModule "github.com/ricnah/workit-be/service/modules/user"
+	userrepo "github.com/ricnah/workit-be/service/modules/user/repository"
+	usercase "github.com/ricnah/workit-be/service/modules/user/usecase"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

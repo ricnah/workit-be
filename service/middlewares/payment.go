@@ -3,8 +3,8 @@ package middlewares
 import (
 	"fmt"
 
-	"github.com/DeniesKresna/sined/service/extensions/terror"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/service/extensions/terror"
 )
 
 func CheckPaymentGateway() gin.HandlerFunc {

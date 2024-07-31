@@ -3,10 +3,10 @@ package repository
 import (
 	"errors"
 
-	"github.com/DeniesKresna/sined/service/extensions/terror"
-	"github.com/DeniesKresna/sined/types/constants"
-	"github.com/DeniesKresna/sined/types/models"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/service/extensions/terror"
+	"github.com/ricnah/workit-be/types/constants"
+	"github.com/ricnah/workit-be/types/models"
 	"gorm.io/gorm"
 )
 

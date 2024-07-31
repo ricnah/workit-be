@@ -4,8 +4,8 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/DeniesKresna/sined/types/constants"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/types/constants"
 	"gorm.io/gorm"
 )
 

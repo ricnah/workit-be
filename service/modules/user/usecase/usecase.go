@@ -1,10 +1,10 @@
 package usecase
 
 import (
-	"github.com/DeniesKresna/sined/service/extensions/terror"
-	"github.com/DeniesKresna/sined/service/modules/user/repository"
-	"github.com/DeniesKresna/sined/types/models"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/service/extensions/terror"
+	"github.com/ricnah/workit-be/service/modules/user/repository"
+	"github.com/ricnah/workit-be/types/models"
 )
 
 type UserUsecase struct {

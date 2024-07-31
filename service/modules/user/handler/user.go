@@ -2,9 +2,9 @@ package handler
 
 import (
 	"github.com/DeniesKresna/gohelper/utint"
-	"github.com/DeniesKresna/sined/service/extensions/terror"
-	"github.com/DeniesKresna/sined/types/models"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/service/extensions/terror"
+	"github.com/ricnah/workit-be/types/models"
 )
 
 func (h UserHandler) UserGetByID(ctx *gin.Context) {

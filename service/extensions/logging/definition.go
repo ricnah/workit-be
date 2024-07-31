@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/DeniesKresna/gohelper/utstring"
-	"github.com/DeniesKresna/sined/types/constants"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/types/constants"
 )
 
 const (

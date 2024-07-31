@@ -3,7 +3,7 @@ package config
 import (
 	"github.com/DeniesKresna/gohelper/utint"
 	"github.com/DeniesKresna/gohelper/utstring"
-	"github.com/DeniesKresna/sined/types/constants"
+	"github.com/ricnah/workit-be/types/constants"
 )
 
 type App struct {

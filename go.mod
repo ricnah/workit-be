@@ -1,4 +1,4 @@
-module github.com/DeniesKresna/sined
+module github.com/ricnah/workit-be
 
 go 1.20
 

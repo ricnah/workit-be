@@ -7,11 +7,11 @@ import (
 
 	"github.com/DeniesKresna/gohelper/utstring"
 	"github.com/DeniesKresna/gohelper/utstruct"
-	"github.com/DeniesKresna/sined/service/extensions/terror"
-	"github.com/DeniesKresna/sined/types/constants"
-	"github.com/DeniesKresna/sined/types/models"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/service/extensions/terror"
+	"github.com/ricnah/workit-be/types/constants"
+	"github.com/ricnah/workit-be/types/models"
 	"golang.org/x/crypto/bcrypt"
 )
 

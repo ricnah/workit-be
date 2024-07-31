@@ -5,11 +5,11 @@ import (
 	"strings"
 
 	"github.com/DeniesKresna/gohelper/utstring"
-	"github.com/DeniesKresna/sined/service/extensions/terror"
-	"github.com/DeniesKresna/sined/service/modules/user/usecase"
-	"github.com/DeniesKresna/sined/types/constants"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/service/extensions/terror"
+	"github.com/ricnah/workit-be/service/modules/user/usecase"
+	"github.com/ricnah/workit-be/types/constants"
 )
 
 func CheckRole[T string | constants.Roles](userCase usecase.IUsecase, roles []T) gin.HandlerFunc {

@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/DeniesKresna/gohelper/utstring"
-	"github.com/DeniesKresna/sined/types/constants"
-	"github.com/DeniesKresna/sined/types/models"
+	"github.com/ricnah/workit-be/types/constants"
+	"github.com/ricnah/workit-be/types/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

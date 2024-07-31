@@ -1,12 +1,12 @@
 package user
 
 import (
-	"github.com/DeniesKresna/sined/config"
-	"github.com/DeniesKresna/sined/service/middlewares"
-	"github.com/DeniesKresna/sined/service/modules/user/handler"
-	"github.com/DeniesKresna/sined/service/modules/user/usecase"
-	"github.com/DeniesKresna/sined/types/constants"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/config"
+	"github.com/ricnah/workit-be/service/middlewares"
+	"github.com/ricnah/workit-be/service/modules/user/handler"
+	"github.com/ricnah/workit-be/service/modules/user/usecase"
+	"github.com/ricnah/workit-be/types/constants"
 )
 
 func InitRoutes(v1 *gin.RouterGroup, userCase usecase.IUsecase, cfg *config.Config) {

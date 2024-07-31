@@ -5,12 +5,12 @@ import (
 	"net/http"
 
 	"github.com/DeniesKresna/gohelper/utstring"
-	"github.com/DeniesKresna/sined/service/extensions/helper"
-	"github.com/DeniesKresna/sined/service/extensions/terror"
-	"github.com/DeniesKresna/sined/service/modules/user/usecase"
-	"github.com/DeniesKresna/sined/types/constants"
-	"github.com/DeniesKresna/sined/types/models"
 	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/service/extensions/helper"
+	"github.com/ricnah/workit-be/service/extensions/terror"
+	"github.com/ricnah/workit-be/service/modules/user/usecase"
+	"github.com/ricnah/workit-be/types/constants"
+	"github.com/ricnah/workit-be/types/models"
 )
 
 type UserHandler struct {
