@@ -14,7 +14,7 @@ RUN npm install && npm run generate
 # Start from golang base image
 FROM golang:alpine as builder
 
-# ENV GO111MODULE=ono
+# ENV GO111MODULE=on
 
 # Add Maintainer info
 LABEL maintainer="Denies Kresna <denieskresna@gmail.com>"

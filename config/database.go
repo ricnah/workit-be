@@ -23,7 +23,11 @@ func (cfg *Config) SetConfigDatabase() (err error) {
 		return
 	}
 
-	db.AutoMigrate(&models.Role{}, &models.User{})
+	// AutoMigrate untuk User, Role, dan Product
+	err = db.AutoMigrate(&models.Role{}, &models.User{}, &models.Product{})
+	if err != nil {
+		return
+	}
 
 	if utstring.GetEnv(constants.ENV_APP_ENV, "local") != "production" {
 		cfg.DB = db.Debug()
