@@ -1,42 +1,36 @@
 package handler
 
 import (
-    "github.com/gin-gonic/gin"
-    "github.com/ricnah/workit-be/service/modules/product/usecase"
-    "github.com/ricnah/workit-be/types/models"
-    "net/http"
+	"github.com/gin-gonic/gin"
+	"github.com/ricnah/workit-be/service/extensions/terror"
+	"github.com/ricnah/workit-be/types/models"
 )
 
-type ProductHandler struct {
-    usecase usecase.ProductUsecase // Sesuaikan dengan interface yang benar
-}
-
-func NewProductHandler(usecase usecase.ProductUsecase) *ProductHandler {
-    return &ProductHandler{usecase: usecase}
-}
-
 func (h *ProductHandler) CreateProduct(c *gin.Context) {
-    var product models.Product
-    if err := c.BindJSON(&product); err != nil {
-        c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input"})
-        return
-    }
+	var product models.Product
+	var terr terror.ErrInterface
 
-    createdProduct, err := h.usecase.CreateProduct(c, product)
-    if err != nil {
-        c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-        return
-    }
+	if err := c.ShouldBindJSON(&product); err != nil {
+		terr = terror.ErrParameter(err.Error())
+		ResponseJson(c, terr)
+		return
+	}
 
-    c.JSON(http.StatusOK, createdProduct)
+	createdProduct, terr := h.productUsecase.CreateProduct(c, product)
+	if terr != nil {
+		ResponseJson(c, terr)
+		return
+	}
+
+	ResponseJson(c, createdProduct)
 }
 
 func (h *ProductHandler) GetProducts(c *gin.Context) {
-    products, err := h.usecase.GetProducts(c)
-    if err != nil {
-        c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-        return
-    }
+	products, terr := h.productUsecase.GetProducts(c)
+	if terr != nil {
+		ResponseJson(c, terr)
+		return
+	}
 
-    c.JSON(http.StatusOK, products)
+	ResponseJson(c, products)
 }
