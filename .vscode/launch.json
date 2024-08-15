@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Go Program",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "C:/project/jobhun/JobhunUmsida/main.go",
+            "env": {
+                "DB_HOST": "localhost",
+                "DB_PORT": "3306",
+                "DB_USERNAME": "ricnah",
+                "DB_PASSWORD": "makanair",
+                "DB_DATABASE": "workit-be"
+            },
+            "args": []
+        }
+    ]
+}
