@@ -439,4 +439,4 @@ Untuk berkontribusi, harap buat *pull request* dengan spesifikasi nama branch de
 
 ---
 
-*Developed with ❤️ by Ricki Maulana Abdillah & Innovators Team. Managed under Enterprise Software Design Guidelines.*
+*Developed by Team. Managed under Enterprise Software Design Guidelines.*
